@@ -1,0 +1,3 @@
+[submodule "vendor/elecxstock"]
+	path = vendor/elecxstock
+	url = https://github.com/kurouna/elecxstock.git

@@ -1,0 +1,33 @@
+# プッシュとプルリクエストのたびに lint・型検査・テスト（キー操作の E2E を含む）と、単一実行ファイルのビルドを確かめる
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  verify:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          submodules: true
+      # node --build-sea（単一実行ファイル）に Node 25.5 以降が要る
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 25
+          cache: npm
+      - run: npm ci
+      - run: npm run verify
+      - name: Build the single executable and smoke-test it
+        shell: bash
+        run: |
+          npm run sea
+          npm run fixture
+          ./dist/elecxstock-cli.exe --version
+          ./dist/elecxstock-cli.exe --where --data .fixture/data

@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.fixture/
+coverage/
+*.log
+# 捨てるモック（設計のときの見た目の確かめ）
+mock/
