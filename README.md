@@ -96,13 +96,13 @@ elecxstock-cli
 
 Windows Terminal で動かして撮ったものです（値はすべて架空。elecxstock のテスト用のスタブのデータ）。
 
-| 詳細（Enter） | 格子（v） |
-| --- | --- |
-| <img src="docs/screenshots/detail.png" alt="詳細"> | <img src="docs/screenshots/grid.png" alt="格子"> |
-| **4 保有** | **5 ポートフォリオ** |
-| <img src="docs/screenshots/holdings.png" alt="保有"> | <img src="docs/screenshots/portfolio.png" alt="ポートフォリオ"> |
-| **1 マーケット** | |
-| <img src="docs/screenshots/market.png" alt="マーケット"> | |
+| 詳細（Enter）                                            | 格子（v）                                                       |
+| -------------------------------------------------------- | --------------------------------------------------------------- |
+| <img src="docs/screenshots/detail.png" alt="詳細">       | <img src="docs/screenshots/grid.png" alt="格子">                |
+| **4 保有**                                               | **5 ポートフォリオ**                                            |
+| <img src="docs/screenshots/holdings.png" alt="保有">     | <img src="docs/screenshots/portfolio.png" alt="ポートフォリオ"> |
+| **1 マーケット**                                         |                                                                 |
+| <img src="docs/screenshots/market.png" alt="マーケット"> |                                                                 |
 
 ### 開発
 
