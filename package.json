@@ -23,15 +23,18 @@
     "build": "node scripts/build.mjs",
     "sea": "node scripts/build.mjs && node scripts/sea.mjs",
     "fixture": "tsx scripts/fixture.ts",
-    "shots": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/shots.ps1"
+    "shots": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/shots.ps1",
+    "gen:card": "node scripts/gen-repo-card.mjs"
   },
   "devDependencies": {
     "@biomejs/biome": "2.6.8",
+    "@fontsource/source-sans-3": "^5.3.1",
     "@types/node": "24.19.2",
     "@types/react": "^19.2.0",
     "esbuild": "^0.28.2",
     "fflate": "0.8.3",
     "ink": "^6.8.0",
+    "opentype.js": "^2.0.0",
     "react": "^19.2.0",
     "string-width": "^8.3.0",
     "tsx": "^4.20.0",

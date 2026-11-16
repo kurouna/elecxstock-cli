@@ -1,4 +1,6 @@
-# elecxstock-cli
+<p align="center">
+  <img src="./public/elecxstock_repo_card.svg" width="800" alt="elecxstock-cli - Your elecxstock data, top-style in the terminal">
+</p>
 
 <p align="center">
   <a href="https://github.com/kurouna/elecxstock-cli/releases/latest"><img src="https://img.shields.io/github/v/release/kurouna/elecxstock-cli?include_prereleases&label=release" alt="Release"></a>

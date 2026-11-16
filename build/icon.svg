@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- elecxstock-cli のアイコン: elecxstock のアイコンと同じ作り（端末の板・画面・小さなパネル・e の丸）で、画面は CUI（タブ・表・面のチャート） -->
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <title>elecxstock-cli</title>
+  <defs>
+    <clipPath id="cli-screen"><rect x="208" y="128" width="640" height="420" rx="22"/></clipPath>
+  </defs>
+  <rect x="172" y="88" width="740" height="860" rx="64" fill="#94a3b8"/>
+  <rect x="160" y="76" width="740" height="860" rx="64" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="8"/>
+
+  <!-- 画面: 状態の行・タブ・面のチャート -->
+  <rect x="208" y="128" width="640" height="420" rx="22" fill="#0b0f14" stroke="#a7c8cc" stroke-width="10"/>
+  <g clip-path="url(#cli-screen)">
+    <rect x="240" y="156" width="96" height="22" rx="4" fill="#1d4f9e"/>
+    <rect x="352" y="161" width="70" height="12" rx="6" fill="#6f7986"/>
+    <rect x="438" y="161" width="46" height="12" rx="6" fill="#d9a400"/>
+    <rect x="240" y="200" width="22" height="20" rx="3" fill="#1b2029"/>
+    <rect x="270" y="204" width="52" height="12" rx="6" fill="#6f7986"/>
+    <rect x="340" y="200" width="22" height="20" rx="3" fill="#1d4f9e"/>
+    <rect x="370" y="204" width="76" height="12" rx="6" fill="#dfe4ea"/>
+    <rect x="340" y="226" width="106" height="5" rx="2.5" fill="#7aa7ff"/>
+    <rect x="464" y="204" width="44" height="12" rx="6" fill="#6f7986"/>
+    <!-- 面のチャート（半ブロックの段）と右の目盛り -->
+    <path d="M240 520 V448 H272 V460 H304 V440 H336 V452 H368 V420 H400 V400 H432 V410 H464 V372 H496 V350 H528 V362 H560 V330 H592 V310 H624 V318 H656 V286 H688 V270 H720 V282 H752 V258 H784 V520 Z" fill="#1e3a5f"/>
+    <path d="M240 448 H272 V460 H304 V440 H336 V452 H368 V420 H400 V400 H432 V410 H464 V372 H496 V350 H528 V362 H560 V330 H592 V310 H624 V318 H656 V286 H688 V270 H720 V282 H752 V258 H784" fill="none" stroke="#7aa7ff" stroke-width="10" stroke-linejoin="miter"/>
+    <rect x="800" y="250" width="6" height="270" fill="#2d3540"/>
+    <path d="M790 258 L812 248 V268 Z" fill="#dfe4ea"/>
+    <rect x="240" y="528" width="560" height="6" fill="#2d3540"/>
+  </g>
+
+  <!-- 右下のパネル: 一覧の行（陽線は赤・陰線は青。日本式） -->
+  <rect x="508" y="588" width="340" height="300" rx="22" fill="#0b0f14" stroke="#a7c8cc" stroke-width="10"/>
+  <rect x="540" y="614" width="60" height="12" rx="6" fill="#a7c8cc"/>
+  <rect x="528" y="650" width="300" height="44" rx="6" fill="#1a2638"/>
+  <rect x="528" y="650" width="10" height="44" fill="#7aa7ff"/>
+  <g stroke-linecap="round" stroke-width="22">
+    <line x1="560" y1="672" x2="700" y2="672" stroke="#dfe4ea"/><line x1="742" y1="672" x2="812" y2="672" stroke="#e5484d"/>
+    <line x1="546" y1="736" x2="680" y2="736" stroke="#64748b"/><line x1="742" y1="736" x2="812" y2="736" stroke="#2f9bd6"/>
+    <line x1="546" y1="800" x2="712" y2="800" stroke="#475569"/><line x1="742" y1="800" x2="812" y2="800" stroke="#e5484d"/>
+  </g>
+
+  <!-- 左下のパネル: プロンプト -->
+  <rect x="208" y="588" width="260" height="300" rx="22" fill="#0b0f14" stroke="#a7c8cc" stroke-width="10"/>
+  <circle cx="272" cy="720" r="224" fill="#ffffff"/>
+  <circle cx="272" cy="720" r="192" fill="#10a5e8"/>
+  <g stroke="#ffffff" stroke-width="48" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <polyline points="176,624 272,720 176,816"/>
+    <line x1="296" y1="816" x2="384" y2="816"/>
+  </g>
+</svg>
