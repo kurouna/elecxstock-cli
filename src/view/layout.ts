@@ -15,7 +15,7 @@ export const COLS: Col[] = [
   { k: 'yld', t: '利回り', w: 8, prio: 1, right: true },
   { k: 'target', t: '水準まで', w: 11, prio: 2, right: true },
   { k: 'pos', t: '52週の位置', w: 15, prio: 3 },
-  { k: 'rec', t: '権利月', w: 9, prio: 4, right: true },
+  { k: 'rec', t: '権利月', w: 10, prio: 4, right: true },
   { k: 'spark', t: '1年', w: 15, prio: 5 },
 ]
 const NAME_MIN = 16

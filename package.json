@@ -23,7 +23,7 @@
     "build": "node scripts/build.mjs",
     "sea": "node scripts/build.mjs && node scripts/sea.mjs",
     "fixture": "tsx scripts/fixture.ts",
-    "frames": "tsx scripts/frames.ts"
+    "shots": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/shots.ps1"
   },
   "devDependencies": {
     "@biomejs/biome": "2.6.8",

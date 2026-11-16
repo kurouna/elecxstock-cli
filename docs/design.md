@@ -5,7 +5,7 @@ elecxstock が手元に貯めたデータを、ターミナルで `top` のよ�
 - 画面は 5 つ（`1` マーケット・`2` スクリーナー・`3` ウォッチリスト・`4` 保有・`5` ポートフォリオ）。銘柄のチャートは
   どの画面からも `Enter` で入る**詳細**にする（番号のタブにしない）。
 - **読むだけ**。取得（Yahoo・JPX への通信）と利用者のデータの書き込みはアプリに任せる。**elecxstock のコードは 1 行も変えない**（§9）。
-- 画面の例（文字だけ。値はすべて架空）は `docs/screens/`（`npm run frames` で作り直す）。
+- 画面の例は `docs/screenshots/`（`npm run shots`。架空のデータ `.fixture/data` を Windows Terminal で動かして撮る）。
 
 参照した elecxstock の文書: `docs/requirements.md`（§0 判断 5・§1.2・§3・§4・§6.15〜6.17・§7.2 FR-C12・§8）、`design-market-board.md`、
 `design-breadth.md`、`design-portfolio.md`、`CLAUDE.md`。レビュー（2026-11-16、Opus 5.5・Fable 5.2 のサブエージェント）の指摘を反映済み。
@@ -228,7 +228,7 @@ elecxstock-cli/
     view/              描画の部品の計算（文字の幅・小さなグラフ・目盛り・列の選び方・書式）
     ui/                Ink の画面（parts.ts の部品と screens.ts の 5 つの画面・詳細・キーの一覧）
   vendor/elecxstock/   elecxstock のサブモジュール（リリースのタグに固定）
-  scripts/             まとめる（build.mjs）・単一実行ファイル（sea.mjs）・架空のデータ（fixture.ts）・画面の例（frames.ts）
+  scripts/             まとめる（build.mjs）・単一実行ファイル（sea.mjs）・架空のデータ（fixture.ts）・スクリーンショット（shots.ps1）
   tests/               e2e（キー操作・端末の大きさ・読み取り専用）・unit（純粋な関数・アプリとの突き合わせ）
   docs/design.md       この文書
 ```
