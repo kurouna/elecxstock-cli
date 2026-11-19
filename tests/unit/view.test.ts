@@ -1,7 +1,7 @@
 // 描画の部品（純粋な関数）: 小さなグラフ・目盛り・列の選び方・表示の窓・文字の幅・金額の隠し方
 import { describe, expect, it } from 'vitest'
 import { areaChart, braille, buckets, dateAxis, gauge, niceTicks } from '../../src/view/charts'
-import { money, pct, px } from '../../src/view/format'
+import { distance, money, pct, px } from '../../src/view/format'
 import { pickCols, windowed } from '../../src/view/layout'
 import { textWidth } from '../../src/view/width'
 
@@ -79,6 +79,15 @@ describe('文字と数', () => {
     expect(money(1234567, true)).toBe('••••••')
     expect(money(-500, false, true)).toBe('-500')
     expect(money(500, false, true)).toBe('+500')
+  })
+  it('アラートの条件までの距離: % と pt（率の指標）は小数 1 桁、円の差（EPS・BPS が 0 以下）は円で、100 万円以上は万・億', () => {
+    expect(distance({ kind: 'pct', value: -5.93 })).toBe('-5.9%')
+    expect(distance({ kind: 'pt', value: 0.4 })).toBe('0.4pt')
+    expect(distance({ kind: 'yen', value: 210 })).toBe('210.0円')
+    expect(distance({ kind: 'yen', value: -1500 })).toBe('-1,500円')
+    expect(distance({ kind: 'yen', value: 3_200_000 })).toBe('320.0万円')
+    expect(distance({ kind: 'yen', value: -3e8 })).toBe('-3.0億円')
+    expect(distance(null)).toBe('')
   })
 })
 

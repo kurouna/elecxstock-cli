@@ -1,7 +1,7 @@
 import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vitest/config'
 
-// elecxstock のソース（vendor/elecxstock。v0.1.13 に固定したサブモジュール）を、アプリと同じ別名で読む
+// elecxstock のソース（vendor/elecxstock。v0.1.14 に固定したサブモジュール）を、アプリと同じ別名で読む
 const r = (p: string) => fileURLToPath(new URL(p, import.meta.url))
 export default defineConfig({
   resolve: { alias: { '@shared': r('vendor/elecxstock/src/shared'), '@core': r('vendor/elecxstock/src/core') } },

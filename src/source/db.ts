@@ -3,7 +3,7 @@
 import { DatabaseSync, type SQLInputValue } from 'node:sqlite'
 import type { Db } from '@core/db'
 
-/** 対応する DB の版（elecxstock v0.1.13 の移行の数。テストで elecxstock の Db と突き合わせる） */
+/** 対応する DB の版（elecxstock v0.1.14 の移行の数。テストで elecxstock の Db と突き合わせる） */
 export const DB_VERSION = 6
 
 export class DbVersionError extends Error {

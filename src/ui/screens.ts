@@ -25,7 +25,7 @@ import {
 import type { Reader } from '../source/reader'
 import { CONTRIB, PERIODS, type State, selIndex, TFS } from '../state'
 import { areaChart, braille, dateAxis, gauge, niceTicks, thinLen } from '../view/charts'
-import { fmt, man, md, money, pct, px, signed } from '../view/format'
+import { distance, fmt, man, md, money, pct, px, signed } from '../view/format'
 import { pickCols, windowed } from '../view/layout'
 import { Badge, Card, Dim, h, Kbd, Line, Mark, Num, T, tone, ui } from './parts'
 
@@ -874,7 +874,7 @@ export function Detail(p: ScreenProps) {
                   Badge('アラート', a.state.met ? C.warn : C.text3),
                   Dim(a.state.met ? ' 成立中 ' : a.enabled ? ' ' : ' 停止中 '),
                   T({}, (a.adjusted ?? a.conditions).map((c) => `${c.field} ${c.op} ${c.value}`).join(' かつ ')),
-                  a.distance ? Dim(`  まで ${a.distance.value.toFixed(1)}${a.distance.kind === 'pct' ? '%' : 'pt'}`) : T({}, ''),
+                  a.distance ? Dim(`  まで ${distance(a.distance)}`) : T({}, ''),
                 ),
               )
           : [Dim('アラートなし', 'na')]),

@@ -34,7 +34,7 @@ describe('データの場所', () => {
 })
 
 describe('読み取り専用の DB', () => {
-  it('知っている DB の版は、アプリ（v0.1.13）の移行の数と同じ', () => {
+  it('知っている DB の版は、アプリ（v0.1.14）の移行の数と同じ', () => {
     const d = mkdtempSync(join(tmpdir(), 'elecxstock-cli-db-'))
     const db = new Db(join(d, 'market.db'))
     const v = Number((db.raw.prepare('PRAGMA user_version').get() as { user_version: number }).user_version)

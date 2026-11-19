@@ -33,7 +33,7 @@ npm run gen:card              # public/elecxstock_repo_card.svg（README のバ�
 | `src/model/`         | 画面のモデル（行・数・予定）。アプリと同じ数え方                                                                               |
 | `src/view/`          | 描画の部品の計算（文字の幅・点字やブロックのグラフ・目盛り・列の選び方・書式）                                                 |
 | `src/ui/`            | Ink の画面（`parts.ts` の部品と色、`screens.ts` の 5 つの画面・詳細・キーの一覧）                                              |
-| `vendor/elecxstock/` | elecxstock のサブモジュール（リリースのタグに固定。今は v0.1.13）。`@shared`・`@core` の別名で import する                     |
+| `vendor/elecxstock/` | elecxstock のサブモジュール（リリースのタグに固定。今は v0.1.14）。`@shared`・`@core` の別名で import する                     |
 | `tests/`             | `e2e`（キー操作・端末の大きさ・読み直し・読み取り専用）・`unit`（純粋な関数・アプリとの突き合わせ）・`support`（種と仮の端末） |
 
 ## 守ること

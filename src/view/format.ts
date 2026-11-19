@@ -1,4 +1,5 @@
 // 数の書式（elecxstock の表示に合わせる）。金額は m で隠す
+import type { AlertView } from '@shared/types'
 export const fmt = (v: number, d = 0): string => v.toLocaleString('ja-JP', { minimumFractionDigits: d, maximumFractionDigits: d })
 /** 株価: 1,000 未満は小数 1 桁 */
 export const px = (v: number | null | undefined): string => (v == null || !Number.isFinite(v) ? '—' : fmt(v, Math.abs(v) < 1000 ? 1 : 0))
@@ -11,3 +12,16 @@ export const money = (v: number, masked: boolean, sign = false): string => (mask
 export const man = (v: number, masked: boolean): string => (masked ? '••••' : `${fmt(v / 1e4)}万`)
 /** 'YYYY-MM-DD' → 'MM/DD' */
 export const md = (d: string | null | undefined): string => (d ? `${d.slice(5, 7)}/${d.slice(8, 10)}` : '—')
+/**
+ * アラートの条件までの距離（詳細の「まで …」）。% と pt（率の指標）は小数 1 桁、円の差（金額の指標で今の値かしきい値が 0 以下。
+ * elecxstock v0.1.14 から）は円で、100 万円以上は万・億。距離が無ければ空
+ */
+export function distance(d: AlertView['distance']): string {
+  if (!d) return ''
+  const v = d.value
+  if (d.kind === 'pct') return `${v.toFixed(1)}%`
+  if (d.kind === 'pt') return `${v.toFixed(1)}pt`
+  const a = Math.abs(v)
+  if (a < 1e6) return `${px(v)}円`
+  return a < 1e8 ? `${fmt(v / 1e4, 1)}万円` : `${fmt(v / 1e8, 1)}億円`
+}

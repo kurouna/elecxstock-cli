@@ -59,7 +59,7 @@ elecxstock が手元に貯めたデータを、ターミナルで `top` のよ�
   （ストアや i18n を引き込むため）。例外は `src/renderer/lib/folio.ts`（`@shared` だけを使う純粋な関数。ポートフォリオの数をアプリと同じにするため、
   `rowsOf`・`totalsOf`・`heroNumbers`・`divRows`・`divSummary`・`divYields` を使う）。開くと書く部品（`Db`・`CoreService`・`UserStore`・`FolioBook`・`AlertBook`）も使わない（§9）。
   ただしテスト（架空のデータを作る種と、§8 の突き合わせ）では `CoreService` を使ってよい。
-- **版を固定する**: サブモジュールは elecxstock の**タグ（リリースした版）**に合わせる（今は `v0.1.13`）。データを書くのは
+- **版を固定する**: サブモジュールは elecxstock の**タグ（リリースした版）**に合わせる（今は `v0.1.14`）。データを書くのは
   インストールしたアプリなので、作業中のソースとずれると `metrics` の列や JSON の形が合わない。
   - elecxstock-cli の `package.json` の `elecxstock.version` に対応する版を書く。DB の版（`user_version`）は `src/source/db.ts` の
     `DB_VERSION` に持ち、サブモジュールの `Db` が作る版と同じかをテストで確かめる。利用者のデータの版は `STORE_VERSION` をそのまま使う。
