@@ -33,7 +33,7 @@ npm run gen:card              # public/elecxstock_repo_card.svg（README のバ�
 | `src/model/`         | 画面のモデル（行・数・予定）。アプリと同じ数え方                                                                               |
 | `src/view/`          | 描画の部品の計算（文字の幅・点字やブロックのグラフ・目盛り・列の選び方・書式）                                                 |
 | `src/ui/`            | Ink の画面（`parts.ts` の部品と色、`screens.ts` の 5 つの画面・詳細・キーの一覧）                                              |
-| `vendor/elecxstock/` | elecxstock のサブモジュール（リリースのタグに固定。今は v0.1.3）。`@shared`・`@core` の別名で import する                      |
+| `vendor/elecxstock/` | elecxstock のサブモジュール（リリースのタグに固定。今は v0.1.13）。`@shared`・`@core` の別名で import する                     |
 | `tests/`             | `e2e`（キー操作・端末の大きさ・読み直し・読み取り専用）・`unit`（純粋な関数・アプリとの突き合わせ）・`support`（種と仮の端末） |
 
 ## 守ること
@@ -44,7 +44,8 @@ npm run gen:card              # public/elecxstock_repo_card.svg（README のバ�
 - **elecxstock のコードは変えない**。使ってよいのは `src/shared/`・開いても書かない `src/core/` の関数・`src/renderer/lib/folio.ts`（純粋な関数）だけ。
   `CoreService` の中にある材料の組み立て（`folioMarket`・保有・`alertViews`・スクリーナーの入力・`bars`）は `src/source/reader.ts` に写し、
   写したものは `tests/unit/parity.test.ts` で `CoreService` と同じ値になることを確かめる。保有・ポートフォリオの数はアプリの画面と同じ数え方にする
-  （`src/model/` のコメント）。
+  （`src/model/` のコメント）。`folio.ts` は v0.1.13 からプライバシーモードの `privacy.svelte.ts`（Svelte のルーン `$state`）を引き込むので、
+  `src/runes.ts`（値をそのまま返す `$state` の代わり。cli のプライバシーモードは常にオフ）を `src/model/index.ts` の先頭で読む。
 - **elecxstock の版を上げるとき**: `git -C vendor/elecxstock checkout v<版>`、`package.json` の `elecxstock.version`、DB の版が変わったら
   `src/source/db.ts` の `DB_VERSION`。変わった表・JSON・関数に合わせて読み口を直し、`npm run verify`（とくに突き合わせ）を通す。
   動いている間にアプリが DB の版を上げたら、落とさずに知らせて読み直しを止める（`Reader.changed` が `DbVersionError`）。

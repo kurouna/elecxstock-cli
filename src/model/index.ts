@@ -1,4 +1,6 @@
 // 画面のモデル（読み口の値から、画面に出す行と数を作る）。描画（view）には計算を書かない
+// 先に読む: elecxstock の folio.ts が引き込む Svelte のルーンの代わり（../runes.ts）
+import '../runes'
 import { type BreadthIn, type BreadthRow, breadth } from '@shared/breadth'
 import { addDays, isMarketOpen, isTradingDay, jstNow } from '@shared/calendar'
 import { DIVIDEND_TAX, netRate, twr } from '@shared/folio'
