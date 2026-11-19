@@ -1,6 +1,6 @@
 {
   "name": "elecxstock-cli",
-  "version": "0.1.0",
+  "version": "0.1.14",
   "description": "elecxstock のデータをターミナルで top のように眺める読み取り専用の CUI",
   "license": "MIT",
   "type": "module",

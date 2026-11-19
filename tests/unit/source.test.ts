@@ -1,5 +1,5 @@
 // 読み口: データの場所の決め方・読み取り専用の DB・利用者のデータの読み方（壊れていても動かさない）
-import { existsSync, mkdtempSync, readdirSync, rmSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdtempSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { DatabaseSync } from 'node:sqlite'
@@ -9,7 +9,16 @@ import { describe, expect, it } from 'vitest'
 import { DB_VERSION, DbVersionError, openDb } from '../../src/source/db'
 import { resolveDataDir } from '../../src/source/paths'
 import { readAlertHistory, readSettings, readUser } from '../../src/source/user'
+import { ELECXSTOCK_VERSION, VERSION } from '../../src/version'
 import { copySeed } from '../support/copy'
+
+describe('版（cli の版は、追従している elecxstock の版と同じにする）', () => {
+  it('package.json の version と elecxstock.version と、サブモジュールの elecxstock の版がそろっている', () => {
+    const vendor = JSON.parse(readFileSync(join('vendor', 'elecxstock', 'package.json'), 'utf8')) as { version: string }
+    expect(ELECXSTOCK_VERSION).toBe(vendor.version)
+    expect(VERSION).toBe(ELECXSTOCK_VERSION)
+  })
+})
 
 describe('データの場所', () => {
   const base = { env: {}, platform: 'win32' as const, home: 'C:\\Users\\u', appData: 'C:\\Users\\u\\AppData\\Roaming' }

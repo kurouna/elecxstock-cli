@@ -72,6 +72,8 @@ npm run gen:card              # public/elecxstock_repo_card.svg（README のバ�
 
 ## リリース
 
+- **版は、追従している elecxstock の版と同じにする**（v0.1.14 から。`package.json` の `version` = `elecxstock.version` = サブモジュールのタグ）。
+  elecxstock の版に追従したらこの版も同じ番号に上げる（番号が飛んでよい）。そろっていることは `tests/unit/source.test.ts` が確かめる。
 - `package.json` の `version` を上げてコミットし、`v<版>` のタグを push すると、`.github/workflows/release.yml` が検査を通したうえで
   exe・zip（exe・ライセンス・README）・`SHA256SUMS.txt` を GitHub Releases に公開する（タグと `version` が違うと止まる）。
 - exe は署名していない（初回に SmartScreen が警告する）。
